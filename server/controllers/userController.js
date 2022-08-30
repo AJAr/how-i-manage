@@ -11,7 +11,7 @@ const pool = mysql.createPool({
 });
 
 //View users
-exports.view((req, res) => {
+exports.view = (req, res) => {
   
 
 pool.getConnection((err, connection) => {
@@ -33,7 +33,7 @@ connection.query('SELECT * FROM user', (err, rows) => {
   console.log('Data from user table: \n', rows);
 });
 
-});
+};
 
 //User search 
 
@@ -116,7 +116,5 @@ exports.edit = (req, res) => {
       }
     
       console.log('Data from user table: \n', rows);
-    });
-    
     });
 }

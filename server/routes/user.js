@@ -6,12 +6,8 @@ const UserController = require('../controllers/userController');
 
 router.get('/', UserController.view);
 router.post('/', UserController.find);
-router.get('/add-user', UserController.newUser);
 router.post('/add-user', UserController.add);
 router.get('/edit-user', UserController.edit);
-
-
-
 
 // router
 router.get('', (req, res) => {
